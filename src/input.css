@@ -1,0 +1,74 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h3 {
+        @apply capitalize text-center p-6;
+    }
+
+    h4 {
+        @apply capitalize text-xl font-bold pt-2 underline decoration-2 pb-2 indent-3;
+    }
+   
+    p {
+        @apply font-serif font-light leading-normal text-base indent-6 pb-3;
+    }
+
+},
+
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+  }
+
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    top: 0;
+    left: 0;
+    background: #9c9aa6;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+
+  .hamburger-middle {
+    transform: translateY(7px);
+  }
+
+.hamburger-bottom {
+    transform: translateY(14px);
+}
+
+.open {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+}
+
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-middle {
+    display: none;
+}
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+.menu-items {
+    @apply px-4 py-1 m-1 text-sm font-bold text-left hover:scale-110 hover:translate-x-2 hover:duration-200 hover:bg-teal-100 shadow-md shadow-black text-teal-900;
+}
+
+.recent-blog-card {
+    @apply  flex flex-col m-4 text-base text-center bg-teal-100 hover:scale-110 hover:-translate-y-2 hover:duration-200 hover:bg-teal-100 shadow-md shadow-black text-teal-900 p-6;
+}
